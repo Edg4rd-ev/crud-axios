@@ -1,11 +1,10 @@
 import React from "react";
+import Header from "../../components/header/Header"
 
 function Edit () {
   return(
     <div>
-      <h1>
-        Page Edit
-      </h1>
+      <Header/>
     </div>
   );
 }

@@ -1,9 +1,9 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-import Post from './pages/post';
-import Edit from './pages/edit';
-import Feed from './pages/feed';
-import List from './pages/list';
+import Post from './pages/Post/post';
+import Edit from './pages/Edit/edit';
+import Feed from './pages/Feed/feed';
+import List from './pages/List/list';
 
 function App() {
   return(

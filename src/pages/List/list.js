@@ -1,11 +1,10 @@
 import React from "react";
+import Header from "../../components/header/Header"
 
 function List () {
   return(
     <div>
-      <h1>
-        Page List
-      </h1>
+      <Header/>
     </div>
   );
 }
