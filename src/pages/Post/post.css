@@ -12,14 +12,12 @@ main {
   border-radius: 15px;
 }
 
-.card-post h1{
-  font-family: Heebo;
-  font-weight: 800;
+.card-post h2{
   text-align: center;
 
-  color: #D2DAF5;
+  color: #3DECB1;
 
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-bottom: 5px;
 }
 
@@ -86,4 +84,6 @@ input {
 
 .error-message {
   color: rgb(240, 47, 47);
+  text-align: center;
+  padding-top: 0.5rem;
 }
