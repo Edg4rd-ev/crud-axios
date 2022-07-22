@@ -6,6 +6,8 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 import axios from "axios";
 
+const url = "http://localhost:5000/create_user"
+
 const validationUser = yup.object().shape({
   name: yup.string().required(),
   email: yup.string().required()
@@ -15,7 +17,7 @@ function Post () {
   const {register, handleSubmit, formState: {errors}} = useForm({
     resolver: yupResolver(validationUser)
   });
-  const addUser = data => axios.post("/create_user", data)
+  const addUser = data => axios.post(url, data)
   .then(() => {
     console.log("deu bom, meu bom")
   }).catch((err) => {
