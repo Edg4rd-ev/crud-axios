@@ -1,10 +1,25 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import HeaderMain from "../../components/headerMain/HeaderMain";
 import {HiPencil, HiTrash} from "react-icons/hi";
 import "./feed.css";
 import {Link} from 'react-router-dom';
+import axios from "axios";
+
+const url = "http://localhost:5000/list_user";
 
 function Feed () {
+
+  const [users, setUser] = useState([]);
+
+  useEffect(() => {
+    axios.get(url) 
+    .then((response) => {
+      setUser(response.data)
+    }).catch((err) => {
+      console.log("Fudeu, my good: ", err)
+    })
+  }, []);
+
   return(
     <div>
       <HeaderMain/>
