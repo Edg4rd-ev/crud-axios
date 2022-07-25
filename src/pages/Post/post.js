@@ -19,7 +19,7 @@ function Post () {
   });
   const addUser = data => axios.post(url, data)
   .then(() => {
-    console.log("deu bom, meu bom")
+    window.alert("Cadastrado!")
   }).catch((err) => {
     console.log("Fudeu, my good: ", err)
   });

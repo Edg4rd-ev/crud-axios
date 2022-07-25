@@ -13,8 +13,8 @@ function Feed () {
 
   useEffect(() => {
     axios.get(url) 
-    .then((response) => {
-      setUser(response.data)
+    .then(response => {
+      setUser(response.data.user)
     }).catch((err) => {
       console.log("Fudeu, my good: ", err)
     })
@@ -25,34 +25,38 @@ function Feed () {
       <HeaderMain/>
 
       <main>
-        <div className="table-data">
+        <div className="table">
           <h2>Users</h2>
-          <table>
-            <thead>
-              <tr>
-                <th>código</th>
-                <th>user</th>
-                <th>e-mail</th>
-                <th>edit</th>
-                <th>delete</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>Edgar</td>
-                <td>edgato@gmail.com</td>
-                <td className="td-edit">
-                  <Link to={"/edit"}>
-                    <button className="btn btn-edit"><HiPencil/></button>
-                  </Link>
-                </td>
-                <td className="td-delete">
-                    <button className="btn btn-delete"><HiTrash/></button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <div className="table-data">
+            <table>
+              <thead>
+                <tr>
+                  <th>código</th>
+                  <th>user</th>
+                  <th>e-mail</th>
+                  <th>edit</th>
+                  <th>delete</th>
+                </tr>
+              </thead>
+              <tbody>
+                {users?.map((users)=>(
+                  <tr key={users.id}>
+                    <td>{users.id}</td>
+                    <td>{users.name}</td>
+                    <td>{users.email}</td>
+                    <td className="td-edit">
+                      <Link to={"/edit"}>
+                        <button className="btn btn-edit"><HiPencil/></button>
+                      </Link>
+                    </td>
+                    <td className="td-delete">
+                        <button className="btn btn-delete"><HiTrash/></button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </main>
     </div>
