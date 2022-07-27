@@ -19,19 +19,18 @@ function Edit () {
   const {register, handleSubmit, formState: {errors}, reset} = useForm({
     resolver: yupResolver(validationTeacher)
   });
-  const editTeacher = data => axios.put(`http://localhost:5000/update_teacher/${id}`, data)  
-  .then(() => {
-    window.alert("Editado!")
-  }).catch((err) => {
-    console.log("Fudeu, my good: ", err)
-  });
-
   useEffect(() => {
     axios.get(`http://localhost:5000/list_by_id/${id}`)
     .then((response) => {
       reset(response.data)
     });
   }, [])
+  const editTeacher = data => axios.patch(`http://localhost:5000/update_teacher/${id}`, data)  
+  .then(() => {
+    window.alert("Editado!")
+  }).catch((err) => {
+    console.log("Fudeu, my good: ", err)
+  });
   return(
     <div>
       <Header/>

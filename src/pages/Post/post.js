@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../../components/header/Header"
 import {useForm} from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import "./post.css";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
@@ -14,14 +15,15 @@ const validationTeacher = yup.object().shape({
 });
 
 function Post () {
+  const history = useNavigate();
   const {register, handleSubmit, formState: {errors}} = useForm({
     resolver: yupResolver(validationTeacher)
   });
   const addTeacher = data => axios.post(url, data)
   .then(() => {
-    window.alert("Cadastrado!")
+    window.alert("Cadastrado!");
   }).catch((err) => {
-    console.log("Fudeu, my good: ", err)
+    console.log("Fudeu, my good: ", err);
   });
   return(
     <div>

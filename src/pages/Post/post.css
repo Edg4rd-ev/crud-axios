@@ -44,7 +44,9 @@ main {
 .selectFields select{
   text-align: left;
   text-transform: capitalize;
-  padding-inline: 1rem;
+  padding-inline: 0.7rem;
+  padding-block: 0.7rem;
+  box-sizing: inherit;
 }
 
 label {

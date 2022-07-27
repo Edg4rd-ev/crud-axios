@@ -29,6 +29,12 @@ function TeacherList () {
       console.log("Fudeu, my good: ", err)
     })
   }, []);
+
+  function deleteTeacher(id){
+    axios.delete(`http://localhost:5000/delete_teacher/${id}`)
+    setTeacher(teachers.filter(teacher => teacher.id_professor !== id))
+  }
+
   return(
     <div>
       <HeaderMain/>
@@ -68,7 +74,7 @@ function TeacherList () {
                       </Link>
                     </td>
                     <td className="td-delete">
-                        <button className="btn btn-delete"><HiTrash/></button>
+                        <button className="btn btn-delete" onClick={() => deleteTeacher(data.id_professor)}><HiTrash/></button>
                     </td>
                   </tr>
                   )
