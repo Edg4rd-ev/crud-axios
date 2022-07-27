@@ -7,6 +7,7 @@ main {
 }
 
 .card-post {
+  width: 700px;
   background-color: #2F3644;
   padding: 30px 70px;
   border-radius: 15px;
@@ -31,8 +32,19 @@ main {
 
 }
 
-.fields {
-  margin-bottom: 20px;
+.fields, .selectFields{
+  margin-bottom: 1rem;
+}
+.selectFields{
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  margin-inline: auto;
+}
+.selectFields select{
+  text-align: left;
+  text-transform: capitalize;
+  padding-inline: 1rem;
 }
 
 label {
@@ -45,7 +57,7 @@ label {
   font-family: Poppins;
 }
 
-input, textarea {
+input, textarea, select {
   width: 100%;
   border-radius: 10px;
   border: 0;
@@ -53,7 +65,7 @@ input, textarea {
 
   font-size: 1.2rem;
 
-  padding-left: 15px;
+  padding-left: 1.5rem;
 }
 
 input {

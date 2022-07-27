@@ -11,7 +11,7 @@ function HeaderMain(){
         </div>
         <div className="btn-newUser">
           <Link to={"/post"}>
-            <button>Add new user</button>
+            <button>Add new teacher</button>
           </Link>
         </div>
       </div>
