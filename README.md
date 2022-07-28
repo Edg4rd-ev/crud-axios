@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+### Observações sobre o código
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Olá, professor! Infelizmente eu não tive acesso ao seu código da atividade anterior sobre os Títulos, e então criando o meu do zero juntamente com a ajuda de documentações e tutoriais na internet.
 
-## Available Scripts
+## Sobre API Rest
 
-In the project directory, you can run:
+Bom... O único acesso que tive a API do senhor foi ao da table professores e a de títulos, isso porque eu alterava o nome do caminho e funionava, foi assim que descobri kkk. Como não sabia como realizar requisições POST, PATCH e DELETE através da API do senhor, eu acabei criando uma própria, porém, somente com a tabela *professor* onde eu criei os mesmos campos 
 
-### `npm start`
+{id_professor, id_titulo, tx_nome, tx_sexo, tx_estado_civil, dt_nascimento, tx_telefone}
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Então através desta minha API eu criei os metodos GET, POST, PACTH e DELETE.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Esta API Rest que criei eu utilizei o Express.js e o Sequelize, pois o banco usado foi o MySql. O banco é local e para isso utilizei também o XAMPP para poder acessá-lo. 
 
-### `npm test`
+## Sobre o código
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+O meu código consegue tranquilamente realizar requisições GET através da API do senhor, porém, as demais requisições eu não sei se irão funcinar. Por isso estou enviando junto a minha API, mas como disse acima, ela usa um banco local e não foi feito o deploy.
 
-### `npm run build`
+Falando mais sobre o código, o modo como envio os dados da api para o state mudam conforme a API que é usada. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#Ex.: Se utilizar na URL a minha API - const url = "http://localhost:5000/list_teacher";
+Na linha 19 do arquivo src/pages/Teacher/teacher_list.js deve estar: setTeacher(response.data.teacher)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Porém se a URL for a API do senhor const url = "https://pcn662vet2.execute-api.us-east-1.amazonaws.com/dev/professor";
+Na linha 19 do arquivo teacher_list.js deve estar: setTeacher(response.data.data) 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Sobre gambiarras
 
-### `npm run eject`
+Bom, como não tive como estudar a API do senhor eu fiz umas gabiarras, principalmente no momento de listar os títulos de cada professor. Tenho certeza que na API que o senhor fez, deve ter uma rota que já traga só os nomes dos títulos junto com cada professor. A maneira que eu encontrei de fazer isso foi criando 2 states, um pegando os dados dos titulos e outro com os dados dos professores, e então no momento de exibir os dados na tela eu rodo um foreach no state de titulos e comparando os id de cada tabela para poder trazer o nome certo de cada titulo.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Por fim...
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Obrigado professor por tudo, peço desculpa por apresentar tantos problemas. Caso eu fique na matéria do senhor eu não vou achar ruim, pois acredito que irei absorver bem melhor o assunto e já estarei craque na linguagem, mas sobre o método, eu achei muito bom. Fiz todo este código nas ultimas duas semanas e eu não sabia quase nada de react, infelizmente eu sempre deixo tudo para ultima hora e isso acabou dificultando tudo, mas eu encarei e lendo muita documentação e acessando fóruns eu consegui aprender bastante, inclusive é muito melhor do que acompanhar tutorias do youtube, porque eu crio o meu próprio metodo e ainda tenho acesso/conhecimentos às atualizações da linguagem, os states mesmo tiveram muitas coisas descontinuadas de uma versão para a outra.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Enfim. Obrigado e uma excelete noite!
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Atenciosamente,
+Edgar Sá Neto.
