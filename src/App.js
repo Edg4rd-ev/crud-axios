@@ -3,7 +3,6 @@ import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Post from './pages/Post/post';
 import Edit from './pages/Edit/edit';
 import TeacherList from './pages/Teacher/teacher_list';
-import List from './pages/List/list';
 
 function App() {
   return(
@@ -12,7 +11,6 @@ function App() {
       <Route exact path="/" element={<TeacherList/>} />
       <Route path="/post" element={<Post/>} />
       <Route path="/edit/:id" element={<Edit/>} />
-      <Route path="/list" element={<List/>} />
     </Routes>
   </Router>
   );

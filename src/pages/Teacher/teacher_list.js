@@ -5,7 +5,7 @@ import "./teacher_list.css";
 import {Link} from 'react-router-dom';
 import axios from "axios";
 
-const url = "http://localhost:5000/list_teacher";
+const url = "https://pcn662vet2.execute-api.us-east-1.amazonaws.com/dev/professor";
 const url2 = "https://pcn662vet2.execute-api.us-east-1.amazonaws.com/dev/titulo"
 
 function TeacherList () {
@@ -16,9 +16,9 @@ function TeacherList () {
   useEffect(() => {
     axios.get(url) 
     .then(response => {
-      setTeacher(response.data.teacher)
+      setTeacher(response.data.data)
     }).catch((err) => {
-      console.log("Fudeu, my good: ", err)
+      console.log("Ops, algo deu errado: ", err)
     })
   }, []);
   useEffect(() => {
