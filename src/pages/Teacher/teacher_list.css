@@ -6,7 +6,7 @@
   scroll-behavior: smooth;
 }
 .table-data{
-  width: 700px;
+  width: 98vw;
   height: 60vh;
   
   overflow: auto;   

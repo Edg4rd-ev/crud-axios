@@ -1,8 +1,6 @@
 main {
   display: flex;
   justify-content: center;
-
-
   padding: 3rem 0;
 }
 
@@ -37,6 +35,7 @@ main {
 }
 .selectFields{
   display: flex;
+  flex-direction: row;
   justify-content: center;
   gap: 4rem;
   margin-inline: auto;
@@ -46,19 +45,14 @@ main {
   text-transform: capitalize;
   padding-inline: 0.7rem;
   padding-block: 0.7rem;
-  box-sizing: inherit;
 }
-
 label {
   display: block;
   margin-bottom: 7px;
   font-size: 1.2rem;
 
   color: #D2DAF5;
-
-  font-family: Poppins;
 }
-
 input, textarea, select {
   width: 100%;
   border-radius: 10px;
@@ -81,7 +75,6 @@ input {
 }
 
 .btn-post button{
-  font-family: Heebo;
   font-weight: 800;
   font-size: 1.3rem;
 
@@ -99,5 +92,6 @@ input {
 .error-message {
   color: rgb(240, 47, 47);
   text-align: center;
-  padding-top: 0.5rem;
+  font-size: 0.7rem;
+  padding: 0;
 }

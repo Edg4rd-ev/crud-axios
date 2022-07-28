@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Header from "../../components/header/Header"
 import {useForm} from "react-hook-form";
-import {useParams} from 'react-router-dom';
+import {useParams, useNavigate} from 'react-router-dom';
 import "../Post/post.css";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
@@ -15,6 +15,7 @@ const validationTeacher = yup.object().shape({
 function Edit () {
 
   const {id} = useParams();
+  const navigate = useNavigate();
 
   const {register, handleSubmit, formState: {errors}, reset} = useForm({
     resolver: yupResolver(validationTeacher)
@@ -24,10 +25,12 @@ function Edit () {
     .then((response) => {
       reset(response.data)
     });
-  }, [])
+    // eslint-disable-next-line
+  }, []);
   const editTeacher = data => axios.patch(`http://localhost:5000/update_teacher/${id}`, data)  
   .then(() => {
-    window.alert("Editado!")
+    navigate("/");
+    window.alert("As alterações foram salvas");
   }).catch((err) => {
     console.log("Fudeu, my good: ", err)
   });
